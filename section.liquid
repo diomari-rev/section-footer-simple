@@ -1,0 +1,172 @@
+<footer class="footer--simple mt-auto py-3">
+      <div class="container">
+        <div class="footer--simple__inner">
+          <div class="footer--simple__logo">
+            {% if section.settings.logo.blank? or section.settings.logo == '' %}
+                <h3>
+                  <a href="#">ACME</a>
+                </h3>
+            {% else %}
+                <a href="#">
+                    <img src="{{ section.settings.logo | image_url }}" style="height: {{ section.settings.logo_size }};" />
+                </a>
+            {% endif %}
+          </div>
+          <div class="footer--simple__navigation">
+            <ul class="footer--simple__list list-inline">
+            {% for item in menus[section.settings.main_linklist].menu_items  %}
+                <li class="list-inline-item">
+                    <a  href="{{ item.link }}">{{ item.name }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+          </div>
+
+          <div class="footer--simple__socials">
+            <ul class="list-inline">
+             {% if section.settings.facebook_url !='' %}
+              <li class="list-inline-item">
+                <a href="{{ section.settings.facebook_url }}">
+                  <i class="bi bi-facebook"></i>
+                </a>
+              </li>
+             {% endif %}
+             {% if section.settings.twitter_url !='' %}
+              <li class="list-inline-item">
+                <a href="{{ section.settings.twitter_url }}">
+                  <i class="bi bi-twitter"></i>
+                </a>
+              </li>
+              {% endif %}
+              {% if section.settings.instagram_url !='' %}
+              <li class="list-inline-item">
+                <a href="{{ section.settings.instagram_url }}">
+                  <i class="bi bi-instagram"></i>
+                </a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+        <div class="footer--simple__bottom pt-2">
+          <p class="footer--simple__copy-text">
+            {{ section.settings.copyright_text }}
+          </p>
+          <ul class="footer--simple__copy-pages list-inline">
+            {% for item in menus[section.settings.secondary_linklist].menu_items  %}
+                <li class="list-inline-item">
+                    <a href="{{ item.link }}">{{ item.name }}</a>
+                </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+{% styles %}
+.footer--simple__inner,
+.footer--simple__bottom{
+  display: grid;
+}
+
+.footer--simple__inner > *,
+.footer--simple__bottom > *{
+  justify-self: center;
+}
+
+.footer--simple__logo {
+  margin-bottom: 10px;
+}
+
+.footer--simple__list li:not(:first-child) a {
+  margin-left: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer--simple__navigation {
+    align-self: center;
+  }
+  .footer--simple__inner {
+    display: grid;
+    grid-template-columns: 10% 1fr 15%;
+  }
+  .footer--simple__logo {
+    justify-self: left;
+    margin-bottom: initial;
+  }
+  .footer--simple__socials,
+  .footer--simple__copy-pages {
+    justify-self: right;
+  }
+
+  .footer--simple__bottom {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+
+  .footer--simple__bottom a,
+  .footer--simple__bottom p {
+    color: #8eb9f9;
+  }
+
+  .footer--simple__copy-text {
+    justify-self: right;
+  }
+  
+  .footer--simple__copy-pages {
+    justify-self: left;
+  }
+
+}
+{% endstyles %}
+
+{% schema %}
+{
+    "name": "Footer Simple",
+    "description": "A simple footer with logo, menu for navigaiton links, menu for copyright/terms pages and social media links.",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+        },
+        {
+            "type": "link_list",
+            "id": "main_linklist",
+            "label": "Main Menu List",
+            "default": "main"
+        },
+        {
+            "type": "link_list",
+            "id": "secondary_linklist",
+            "label": "Bottom Menu List",
+            "default": "main"
+        },
+        {
+            "type":"text",
+            "id":"copyright_text",
+            "label":"Copyright text",
+            "default":"Add your copyright text here."
+        },
+        {
+            "type":"url",
+            "id":"facebook_url",
+            "label":"Facebook URL",
+            "default":"https://web.facebook.com/"
+        },
+        {
+            "type":"url",
+            "id":"twitter_url",
+            "label":"Twitter URL",
+            "default":"https://twitter.com/"
+        },
+        {
+            "type":"url",
+            "id":"instagram_url",
+            "label":"Instagram URL",
+            "default":"https://instagram.com/"
+        }
+    ]
+}
+{% endschema %}
+  
