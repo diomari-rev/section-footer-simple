@@ -17,115 +17,116 @@
     />
   </head>
   <style>
-    .footer--simple__inner {
-      display: grid;
-    }
-    .footer--simple__inner > * {
-      justify-self: center;
-    }
-    .footer--simple__bottom {
-      display: grid;
-    }
-    .footer--simple__bottom > * {
-      justify-self: center;
+    .footer-simple a:hover {
+      text-decoration: underline;
     }
 
-    .footer--simple__logo {
-      margin-bottom: 10px;
+    .footer-simple .footer-simple__logo {
+      max-height: 100px;
     }
 
-    .footer--simple__list li:not(:first-child) a {
-      margin-left: 10px;
+    .footer-simple .footer-simple__socials {
+      font-size: 22px;
+    }
+
+    .footer-simple .footer-simple__links ul li {
+      margin: 5px 0;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-simple .footer-simple__link {
+      text-decoration: none;
+    }
+
+    .footer-simple .footer-simple__copy,
+    .footer-simple .footer-simple__secondary a {
+      color: #a9cbfa;
     }
 
     @media only screen and (min-width: 768px) {
-      .footer--simple__inner {
-        display: grid;
-        grid-template-columns: 10% 1fr 15%;
-      }
-      .footer--simple__logo {
-        justify-self: left;
-        margin-bottom: initial;
-      }
-      .footer--simple__socials {
-        justify-self: right;
+      .footer-simple .footer-simple__socials {
+        font-size: 18px;
       }
 
-      .footer--simple__bottom {
-        grid-template-columns: 1fr 1fr;
-        column-gap: 20px;
-      }
-
-      .footer--simple__bottom a,
-      .footer--simple__bottom p {
-        color: #8eb9f9;
-      }
-
-      .footer--simple__copy-text {
-        justify-self: right;
-      }
-
-      .footer--simple__copy-pages {
-        justify-self: left;
+      .footer-simple .footer-simple__secondary ul li,
+      .footer-simple .footer-simple__links ul li {
+        display: inline-block;
+        margin: 0 10px 0 0;
       }
     }
   </style>
-  <body class="d-flex flex-column h-100">
+  <body>
     <!-- FOOTER SIMPLE -->
-    <footer class="footer--simple mt-auto py-3">
+    <footer class="footer-simple">
       <div class="container">
-        <div class="footer--simple__inner">
-          <div class="footer--simple__logo">
-            <h3>
-              <a href="#"> ACME </a>
-            </h3>
+        <div class="row">
+          <div class="col-md-3">
+            <div
+              class="footer-simple__logo text-center text-md-start py-2 py-md-0"
+            >
+              <h3>
+                <a href="#"> ACME </a>
+              </h3>
+            </div>
           </div>
-          <div class="footer--simple__navigation">
-            <ul class="footer--simple__list list-inline">
-              <li class="list-inline-item">
-                <a href="#"> Home </a>
+          <div class="col-md-7 footer-simple__links">
+            <ul class="list-unstyled text-center text-md-start">
+              <li>
+                <a class="footer-simple__link" href="#"> First Page </a>
               </li>
-              <li class="list-inline-item">
-                <a href="#"> About </a>
+              <li>
+                <a class="footer-simple__link" href="#"> Second Page </a>
               </li>
-              <li class="list-inline-item">
-                <a href="#"> Contact Us </a>
+              <li>
+                <a class="footer-simple__link" href="#"> Third Page </a>
+              </li>
+              <li>
+                <a class="footer-simple__link" href="#"> Fourth Page </a>
               </li>
             </ul>
           </div>
 
-          <div class="footer--simple__socials">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="bi bi-facebook"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="bi bi-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="bi bi-instagram"></i>
-                </a>
-              </li>
-            </ul>
+          <div class="col-md-2">
+            <div class="footer-simple__socials text-center text-md-end">
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="bi bi-facebook"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="bi bi-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="bi bi-instagram"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="footer--simple__bottom pt-2">
-          <p class="footer--simple__copy-text">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          </p>
-          <ul class="footer--simple__copy-pages list-inline">
-            <li class="list-inline-item">
-              <a href="#"> Privacy Policy </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#"> Terms of Service </a>
-            </li>
-          </ul>
+        <div class="row">
+          <div class="col-md-6 text-center text-md-end">
+            <div class="footer-simple__copy">
+              <p>© 2020 Acme. All rights reserved.</p>
+            </div>
+          </div>
+          <div class="col-md-6 text-center text-md-start">
+            <div class="footer-simple__secondary">
+              <ul class="list-unstyled">
+                <li>
+                  <a class="footer-simple__link" href="#"> Privacy Policy </a>
+                </li>
+                <li>
+                  <a class="footer-simple__link" href="#"> Terms of Service </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
