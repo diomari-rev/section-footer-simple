@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer Simple</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+  </head>
+  <style>
+    .footer--simple__inner {
+      display: grid;
+    }
+    .footer--simple__inner > * {
+      justify-self: center;
+    }
+    .footer--simple__bottom {
+      display: grid;
+    }
+    .footer--simple__bottom > * {
+      justify-self: center;
+    }
+
+    .footer--simple__logo {
+      margin-bottom: 10px;
+    }
+
+    .footer--simple__list li:not(:first-child) a {
+      margin-left: 10px;
+    }
+
+    @media only screen and (min-width: 768px) {
+      .footer--simple__inner {
+        display: grid;
+        grid-template-columns: 10% 1fr 15%;
+      }
+      .footer--simple__logo {
+        justify-self: left;
+        margin-bottom: initial;
+      }
+      .footer--simple__socials {
+        justify-self: right;
+      }
+
+      .footer--simple__bottom {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+      }
+
+      .footer--simple__bottom a,
+      .footer--simple__bottom p {
+        color: #8eb9f9;
+      }
+
+      .footer--simple__copy-text {
+        justify-self: right;
+      }
+
+      .footer--simple__copy-pages {
+        justify-self: left;
+      }
+    }
+  </style>
+  <body class="d-flex flex-column h-100">
+    <!-- FOOTER SIMPLE -->
+    <footer class="footer--simple mt-auto py-3">
+      <div class="container">
+        <div class="footer--simple__inner">
+          <div class="footer--simple__logo">
+            <h3>
+              <a href="#"> ACME </a>
+            </h3>
+          </div>
+          <div class="footer--simple__navigation">
+            <ul class="footer--simple__list list-inline">
+              <li class="list-inline-item">
+                <a href="#"> Home </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"> About </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"> Contact Us </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer--simple__socials">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-instagram"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer--simple__bottom pt-2">
+          <p class="footer--simple__copy-text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          </p>
+          <ul class="footer--simple__copy-pages list-inline">
+            <li class="list-inline-item">
+              <a href="#"> Privacy Policy </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#"> Terms of Service </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- END OF FOOTER SIMPLE -->
+  </body>
+</html>
